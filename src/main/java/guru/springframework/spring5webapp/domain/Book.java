@@ -17,12 +17,23 @@ public class Book {
     private String isbn;
     private String title;
 
+    @ManyToOne
+    private Publisher publisher;
+
     public Book() {
     }
 
     public Book(String isbn, String title) {
         this.isbn = isbn;
         this.title = title;
+    }
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
     }
 
     public Set<Author> getAuthors() {
